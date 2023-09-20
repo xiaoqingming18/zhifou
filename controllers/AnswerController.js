@@ -149,7 +149,7 @@ const getAllRecommendAnswers = async (req,res) => {
     // 构建占位符字符串
     const placeholders = recommendAnswerIds.map(() => "?").join(", ");
     // 构建sql查询参数，通过id获取具体的回答数据
-    const sql = `SELECT a.id, a.content, a.excerpt, a.creator_id, a.create_time, q.title AS question_title FROM answers a JOIN questions q ON a.question_id = q.id WHERE a.id IN (${placeholders})`;
+    const sql = `SELECT a.id, a.content, a.creator_id, a.create_time, q.title AS question_title FROM answers a JOIN questions q ON a.question_id = q.id WHERE a.id IN (${placeholders})`;
     // const sql = `SELECT * FROM answers WHERE id IN (${placeholders})`;
     const sqlArr = recommendAnswerIds;
 

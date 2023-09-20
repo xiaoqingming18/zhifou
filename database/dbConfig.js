@@ -4,8 +4,8 @@ module.exports = {
     config: {
         host: '127.0.0.1',
         port: 3306,
-        user: 'zhifou',
-        password: 'iPzGiLp7D2mcHnAp',
+        user: 'root',
+        password: '20020318ZXF',
         database: 'zhifou'
     },
     sqlConnect: function(sql,sqlArr,callback) {
