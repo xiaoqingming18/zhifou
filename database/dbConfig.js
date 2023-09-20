@@ -5,7 +5,7 @@ module.exports = {
         host: '127.0.0.1',
         port: 3306,
         user: 'zhifou',
-        password: 't6SHifKxwPTRirdk',
+        password: 'iPzGiLp7D2mcHnAp',
         database: 'zhifou'
     },
     sqlConnect: function(sql,sqlArr,callback) {
