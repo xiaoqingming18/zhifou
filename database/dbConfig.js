@@ -21,5 +21,16 @@ module.exports = {
             console.log("请求结束");
             conn.release();
         });
+    },
+    testConnect: function() {
+        const pool = mysql.createPool(this.config);
+        pool.getConnection((err,conn) => {
+            console.log("正在连接数据库...");
+            if(err) {
+                console.log("数据库连接失败！");
+                return;
+            }
+            console.log("数据库连接成功");
+        });
     }
 }

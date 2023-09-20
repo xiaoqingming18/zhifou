@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 
 var app = express();
+const dbConfig = require('./database/dbConfig');
 
 // 解决跨域问题
 app.all("*",function(req,res,next){
@@ -28,7 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 app.use('/api', indexRouter);
-app.listen(3030,() => {console.log("后台服务已启动！")})
+app.listen(3030,() => {
+    console.log("后台服务已启动！");
+    dbConfig.testConnect();
+})
 
 
 
