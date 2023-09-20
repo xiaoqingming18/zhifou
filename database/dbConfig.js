@@ -1,0 +1,25 @@
+const mysql = require('mysql');
+module.exports = {
+    // 数据库配置
+    config: {
+        host: 'localhost',
+        port: 3306,
+        user: 'root',
+        password: '20020318ZXF',
+        database: 'zhifou'
+    },
+    sqlConnect: function(sql,sqlArr,callback) {
+        const pool = mysql.createPool(this.config);
+        pool.getConnection((err,conn) => {
+            console.log("正在连接数据库...");
+            if(err) {
+                console.log("数据库连接失败！");
+                return;
+            }
+            console.log("正在向数据库发起请求...");
+            conn.query(sql,sqlArr,callback);
+            console.log("请求结束");
+            conn.release();
+        });
+    }
+}
